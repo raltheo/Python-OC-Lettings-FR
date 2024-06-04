@@ -13,3 +13,5 @@ urlpatterns = [
     path('profiles/<str:username>/', profilesviews.profile, name='profile'),
     path('admin/', admin.site.urls),
 ]
+
+handler404 = 'oc_lettings_site.views.custom_404'
