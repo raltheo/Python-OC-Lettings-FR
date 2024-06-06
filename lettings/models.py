@@ -7,3 +7,6 @@ class Letting(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        db_table = 'lettings_letting'
