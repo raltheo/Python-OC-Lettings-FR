@@ -1,6 +1,8 @@
 import os
 
 from pathlib import Path
+import sentry_sdk
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +26,17 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+sentry_sdk.init(
+    dsn="https://848e17317b10b3da4a8a9be5204a86e0@o4507180571885568.ingest.de.sentry.io/4507390116298832",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
 
 INSTALLED_APPS = [
     "oc_lettings_site.apps.OCLettingsSiteConfig",
@@ -115,9 +128,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-STATIC_URL = "/static/"
+STATIC_ROOT = "/static_django"
+STATIC_URL = "static/"
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
