@@ -55,7 +55,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST << 'EOF'
             docker stop p13 || true
             docker rm p13 || true
-            docker rmi ${{ secrets.DOCKER_USERNAME }}/p13 || true
+            docker rmi ${{ secrets.DOCKER_USERNAME }}/p13 -f || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/p13:latest
-            docker run -d --name p13 -v /home/ubuntu/db/oc-lettings-site.sqlite3:/app -p 80:80 ${{ secrets.DOCKER_USERNAME }}/p13
+            docker run -d --name p13 -v oc-lettings-site.sqlite3:/app -p 80:80 ${{ secrets.DOCKER_USERNAME }}/p13
           EOF
