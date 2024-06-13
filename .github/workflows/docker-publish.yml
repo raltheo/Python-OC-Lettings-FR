@@ -49,7 +49,8 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY  }}
           port: 22
-          script: docker stop p13 || true
+          script: |
+            docker stop p13 || true
             docker rm p13 || true
             docker rmi ${{ secrets.DOCKER_USERNAME }}/p13 -f || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/p13:latest
