@@ -11,7 +11,7 @@ ALLOWED_HOSTS = ["*"]
 # ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True')
 
-
+#   c'est une folle 
 sentry_sdk.init(
     dsn="https://848e17317b10b3da4a8a9be5204a86e0@\
         o4507180571885568.ingest.de.sentry.io/4507390116298832",
