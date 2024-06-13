@@ -52,6 +52,6 @@ jobs:
           script: |
             docker rm -f $(docker ps -aq)
             docker rmi -f $(docker images -aq)
-            docker pull ${{ secrets.DOCKER_USERNAME }}/p13:latest
-            docker run -d --name p13 -v oc-lettings-site.sqlite3:/app -p 80:80 ${{ secrets.DOCKER_USERNAME }}/p13
+            docker pull raltheo/p13:latest
+            docker run -d --name p13 -v oc-lettings-site.sqlite3:/app -p 80:80 raltheo/p13
       
