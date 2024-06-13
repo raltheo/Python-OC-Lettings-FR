@@ -33,8 +33,9 @@ jobs:
 
       - name: Logout from Docker Hub
         run: docker logout
-        
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
