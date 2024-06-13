@@ -28,7 +28,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 sentry_sdk.init(
-    dsn="https://848e17317b10b3da4a8a9be5204a86e0@o4507180571885568.ingest.de.sentry.io/4507390116298832",
+    dsn="https://848e17317b10b3da4a8a9be5204a86e0@\
+        o4507180571885568.ingest.de.sentry.io/4507390116298832",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,
