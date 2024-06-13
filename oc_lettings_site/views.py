@@ -36,6 +36,7 @@ def custom_500(request):
     - request : La requête HTTP.
 
     Retour :
+    test pour voir si ca marche
     - La page d'erreur 500.
     """
     return render(request, "500.html", status=500)
