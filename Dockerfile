@@ -4,7 +4,6 @@ FROM python:3.10
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_DEBUG=False
 ENV DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost,p13.raltheo.fr
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
