@@ -46,7 +46,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           port: 22
           script: |
-            docker rm -f $(docker ps -aq)
-            docker rmi -f $(docker images -aq)
+            docker rm -f p13
+            docker rmi -f raltheo/p13
             docker pull raltheo/p13:latest
-            docker run -d -v /home/ubuntu/oc-lettings-site.sqlite3:/app/oc-lettings-site.sqlite3 -p 80:80 $(docker images -aq)
+            docker run -d --name p13 -v /home/ubuntu/oc-lettings-site.sqlite3:/app/oc-lettings-site.sqlite3 -p 80:80 raltheo/p13
