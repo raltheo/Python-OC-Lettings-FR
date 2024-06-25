@@ -4,3 +4,4 @@ pytest-django
 coverage
 sentry-sdk
 gunicorn
+sphinx
