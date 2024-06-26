@@ -35,6 +35,8 @@ Vous pouvez trouver `ici <https://github.com/raltheo/Python-OC-Lettings-FR/blob/
 Variable environnement Github Actions
 """""""""""""""""""""""""""""""""""""
 
+Go to settingssdqdqsbkh jbqjh bqjh bqsjhbq shjb qjbs
+
 Processus CI/CD
 """""""""""""""
 
