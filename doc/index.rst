@@ -35,7 +35,22 @@ Vous pouvez trouver `ici <https://github.com/raltheo/Python-OC-Lettings-FR/blob/
 Variable environnement Github Actions
 """""""""""""""""""""""""""""""""""""
 
-Go to settingssdqdqsbkh jbqjh bqjh bqsjhbq shjb qjbs
+J'utilise des variables d'environnement pour gérer les informations sensibles et les configurations spécifiques. Ces variables permettent de configurer le workflow GitHub Actions sans exposer de données sensibles dans le code source.
+
+Pour définir des variables d'environnement dans GitHub Actions, suivez ces étapes :
+
+1. Accédez au dépôt GitHub de votre projet.
+2. Cliquez sur l'onglet "Settings".
+3. Dans le menu de gauche, sélectionnez "Secrets and variables".
+4. Cliquez sur "Actions".
+5. Cliquez sur "New repository secret" pour ajouter une nouvelle variable d'environnement.
+
+Voici quelques variables que j'ai utilisé :
+
+**DOCKER_USERNAME** : Nom d'utilisateur pour se connecter au registre Docker.
+**DOCKER_PASSWORD** : Mot de passe pour se connecter au registre Docker.
+**EC2_HOST** : L'adresse IP de mon vps.
+**EC2_KEY** : Clé privé ssh pour se connecter au vps.
 
 Processus CI/CD
 """""""""""""""
