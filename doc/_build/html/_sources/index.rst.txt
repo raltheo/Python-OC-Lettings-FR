@@ -15,6 +15,9 @@ CI/CD
 
 Cette documentation décrit le processus CI/CD (Intégration Continue et Déploiement Continu) mis en place pour ce projet. L'objectif de ce document est de fournir une compréhension claire des outils utilisés.
 
+Outils Utilisés
+"""""""""""""""
+
 J'utilise les outils suivants pour le pipeline CI/CD :
 
 - **GitHub Actions** : Pour l'automatisation des workflows.
@@ -23,9 +26,34 @@ J'utilise les outils suivants pour le pipeline CI/CD :
 - **Docker** : Pour un déploiement facile sur tout type d'architecture.
 - **EC2 (AWS)** : Pour hébergé mon app.
 
+Configuration CI/CD
+"""""""""""""""""""
+
 Vous pouvez trouver `ici <https://github.com/raltheo/Python-OC-Lettings-FR/blob/master/.github/workflows/docker-publish.yml>`_ la configuration pour le CI/CD.
 
-Dans l'idée le 
+Processus CI/CD
+"""""""""""""""
+
+1. **Linting et Tests Unitaires :**
+
+   - Pour chaque commit, GitHub Actions exécute flake8 pour vérifier la qualité du code.
+   - Ensuite, pytest est utilisé pour lancer les tests unitaires.
+
+2. **Construction de l'Image Docker :**
+
+   - Une fois les tests passés avec succès, une image Docker est construite à partir du Dockerfile.
+   - Cette image est ensuite poussée vers Docker Hub.
+
+3. **Déploiement sur EC2 :**
+
+   - Après la construction et la publication de l'image Docker, le déploiement sur une instance EC2 est déclenché (connexion ssh et execution de commandes).
+   - L'application est déployée en utilisant l'image Docker construite.
+
+Conclusion
+""""""""""
+
+Ce processus CI/CD permet d'assurer que chaque modification du code est vérifiée et testée automatiquement avant d'être déployée en production. Cela contribue à améliorer la qualité du code et à réduire les risques d'erreurs lors du déploiement.
+
 
 Indices and tables
 ==================

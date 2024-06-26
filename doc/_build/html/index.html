@@ -38,6 +38,8 @@
 <section id="ci-cd">
 <h2>CI/CD<a class="headerlink" href="#ci-cd" title="Lien vers cette rubrique">¶</a></h2>
 <p>Cette documentation décrit le processus CI/CD (Intégration Continue et Déploiement Continu) mis en place pour ce projet. L’objectif de ce document est de fournir une compréhension claire des outils utilisés.</p>
+<section id="outils-utilises">
+<h3>Outils Utilisés<a class="headerlink" href="#outils-utilises" title="Lien vers cette rubrique">¶</a></h3>
 <p>J’utilise les outils suivants pour le pipeline CI/CD :</p>
 <ul class="simple">
 <li><p><strong>GitHub Actions</strong> : Pour l’automatisation des workflows.</p></li>
@@ -46,8 +48,38 @@
 <li><p><strong>Docker</strong> : Pour un déploiement facile sur tout type d’architecture.</p></li>
 <li><p><strong>EC2 (AWS)</strong> : Pour hébergé mon app.</p></li>
 </ul>
+</section>
+<section id="configuration-ci-cd">
+<h3>Configuration CI/CD<a class="headerlink" href="#configuration-ci-cd" title="Lien vers cette rubrique">¶</a></h3>
 <p>Vous pouvez trouver <a class="reference external" href="https://github.com/raltheo/Python-OC-Lettings-FR/blob/master/.github/workflows/docker-publish.yml">ici</a> la configuration pour le CI/CD.</p>
-<p>Dans l’idée le</p>
+</section>
+<section id="processus-ci-cd">
+<h3>Processus CI/CD<a class="headerlink" href="#processus-ci-cd" title="Lien vers cette rubrique">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Linting et Tests Unitaires :</strong></p>
+<ul class="simple">
+<li><p>Pour chaque commit, GitHub Actions exécute flake8 pour vérifier la qualité du code.</p></li>
+<li><p>Ensuite, pytest est utilisé pour lancer les tests unitaires.</p></li>
+</ul>
+</li>
+<li><p><strong>Construction de l’Image Docker :</strong></p>
+<ul class="simple">
+<li><p>Une fois les tests passés avec succès, une image Docker est construite à partir du Dockerfile.</p></li>
+<li><p>Cette image est ensuite poussée vers Docker Hub.</p></li>
+</ul>
+</li>
+<li><p><strong>Déploiement sur EC2 :</strong></p>
+<ul class="simple">
+<li><p>Après la construction et la publication de l’image Docker, le déploiement sur une instance EC2 est déclenché (connexion ssh et execution de commandes).</p></li>
+<li><p>L’application est déployée en utilisant l’image Docker construite.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Lien vers cette rubrique">¶</a></h3>
+<p>Ce processus CI/CD permet d’assurer que chaque modification du code est vérifiée et testée automatiquement avant d’être déployée en production. Cela contribue à améliorer la qualité du code et à réduire les risques d’erreurs lors du déploiement.</p>
+</section>
 </section>
 </section>
 <section id="indices-and-tables">
