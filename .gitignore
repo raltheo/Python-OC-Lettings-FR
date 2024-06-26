@@ -4,3 +4,4 @@ venv
 notes
 .coverage
 .pytest_cache
+doc/_build
