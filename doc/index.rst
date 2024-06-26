@@ -11,7 +11,7 @@ Welcome to p13's documentation!
    :caption: Contents:
 
 CI/CD
------
+=====
 
 Cette documentation décrit le processus CI/CD (Intégration Continue et Déploiement Continu) mis en place pour ce projet. L'objectif de ce document est de fournir une compréhension claire des outils utilisés.
 
@@ -30,6 +30,10 @@ Configuration CI/CD
 """""""""""""""""""
 
 Vous pouvez trouver `ici <https://github.com/raltheo/Python-OC-Lettings-FR/blob/master/.github/workflows/docker-publish.yml>`_ la configuration pour le CI/CD.
+
+
+Variable environnement Github Actions
+"""""""""""""""""""""""""""""""""""""
 
 Processus CI/CD
 """""""""""""""
@@ -55,9 +59,3 @@ Conclusion
 Ce processus CI/CD permet d'assurer que chaque modification du code est vérifiée et testée automatiquement avant d'être déployée en production. Cela contribue à améliorer la qualité du code et à réduire les risques d'erreurs lors du déploiement.
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

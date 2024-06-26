@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import Letting
 
-#Affiche la liste de toutes les locations.Affiche la liste de toutes les locations.Affiche la liste de toutes les locations.Affiche la liste de toutes les locations.Affiche la liste de toutes les locations.Affiche la liste de toutes les locations.
 def lettings_index(request):
     """
     Affiche la liste de toutes les locations.
