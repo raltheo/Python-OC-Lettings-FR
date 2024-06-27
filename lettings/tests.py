@@ -14,7 +14,9 @@ class LettingViewTests(TestCase):
             zip_code=12345,
             country_iso_code="USA",
         )
-        self.letting = Letting.objects.create(title="Test Letting", addresses=self.address)
+        self.letting = Letting.objects.create(
+            title="Test Letting", addresses=self.address
+        )
 
     def tearDown(self):
         self.letting.delete()
