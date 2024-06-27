@@ -7,6 +7,7 @@ from lettings import views as lettingsviews
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("trigger-error", views.trigger_500),
     path("lettings/", lettingsviews.lettings_index, name="lettings_index"),
     path("lettings/<int:letting_id>/", lettingsviews.letting, name="letting"),
     path("profiles/", profilesviews.profiles_index, name="profiles_index"),

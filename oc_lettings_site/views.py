@@ -39,3 +39,7 @@ def custom_500(request):
     - La page d'erreur 500.
     """
     return render(request, "500.html", status=500)
+
+
+def trigger_500(request):
+    return a
