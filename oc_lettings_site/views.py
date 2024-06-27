@@ -42,4 +42,4 @@ def custom_500(request):
 
 
 def trigger_500(request):
-    return a
+    return 1 / 0
