@@ -7,13 +7,12 @@ import sentry_sdk
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
 DEBUG = False
 
 
 sentry_sdk.init(
-    dsn="https://848e17317b10b3da4a8a9be5204a86e0@\
-        o4507180571885568.ingest.de.sentry.io/4507390116298832",
+    dsn="https://848e17317b10b3da4a8a9be5204a86e0@o4507180571885568.ingest.de.sentry.io/4507390116298832",
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     traces_sample_rate=1.0,
