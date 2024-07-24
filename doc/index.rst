@@ -10,6 +10,180 @@ Welcome to p13's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+
+Description du projet
+=====================
+Le site web Orange County Lettings est une application web de gestion de locations et de profils utilisateurs. Il permet de visualiser et de gérer des profils et des locations au sein du comté d'Orange.
+
+Instructions sur l'installation du projet
+========================================
+Prérequis
+---------
+- Compte GitHub avec accès en lecture à ce repository
+- Git CLI
+- SQLite3 CLI
+- Interpréteur Python, version 3.6 ou supérieure
+
+macOS / Linux
+-------------
+1. Cloner le repository :
+   .. code-block:: shell
+
+       cd /path/to/put/project/in
+       git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
+
+2. Créer l'environnement virtuel :
+   .. code-block:: shell
+
+       cd /path/to/Python-OC-Lettings-FR
+       python -m venv venv
+       apt-get install python3-venv  # Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu
+
+3. Activer l'environnement virtuel :
+   .. code-block:: shell
+
+       source venv/bin/activate
+
+4. Confirmer que la commande python exécute l'interpréteur Python dans l'environnement virtuel :
+   .. code-block:: shell
+
+       which python
+
+5. Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure :
+   .. code-block:: shell
+
+       python --version
+
+6. Confirmer que la commande pip exécute l'exécutable pip dans l'environnement virtuel :
+   .. code-block:: shell
+
+       which pip
+
+7. Pour désactiver l'environnement :
+   .. code-block:: shell
+
+       deactivate
+
+Windows
+-------
+Utiliser PowerShell, comme ci-dessus sauf :
+1. Pour activer l'environnement virtuel :
+   .. code-block:: shell
+
+       .\venv\Scripts\Activate.ps1
+
+2. Remplacer ``which <my-command>`` par :
+   .. code-block:: shell
+
+       (Get-Command <my-command>).Path
+
+
+Guide de démarrage rapide
+=========================
+1. Exécuter le site :
+   .. code-block:: shell
+
+       cd /path/to/Python-OC-Lettings-FR
+       source venv/bin/activate
+       pip install --requirement requirements.txt
+       python manage.py runserver
+
+2. Aller sur http://localhost:8000 dans un navigateur.
+3. Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+
+
+Technologies et langages de programmation
+=========================================
+- Python 3.6 ou supérieur
+- Django
+- SQLite
+- Git
+
+
+Structure de la base de données et modèles de données
+=====================================================
+La base de données utilise SQLite et contient les tables suivantes :
+
+- **Address** : stocke les informations d'adresse.
+- **Letting** : stocke les informations de locations associées à des adresses.
+- **Profile** : stocke les informations de profils utilisateurs.
+
+
+Interfaces de programmation
+===========================
+- Les vues Django pour gérer les requêtes HTTP.
+- Les modèles Django pour interagir avec la base de données.
+
+
+Guide d'utilisation
+===================
+Cas d'utilisation
+-----------------
+1. **Consulter les profils** :
+   - Aller sur http://localhost:8000/profiles/
+   - Voir la liste des profils disponibles.
+   
+2. **Consulter les locations** :
+   - Aller sur http://localhost:8000/lettings/
+   - Voir la liste des locations disponibles.
+
+3. **Panel d'administration** :
+   - Aller sur http://localhost:8000/admin
+   - Se connecter avec l'utilisateur root, mot de passe ``root``.
+
+
+Procédures de déploiement et de gestion de l'application
+========================================================
+1. **Déploiement** :
+   - Suivre les étapes de configuration et d'installation ci-dessus.
+   - Utiliser un serveur web tel que Gunicorn pour le déploiement en production.
+   - Configurer un serveur web (Apache, Nginx) pour servir l'application.
+
+2. **Gestion** :
+   - Utiliser les commandes Django pour la gestion de la base de données et des migrations.
+   - Exécuter les tests unitaires :
+     .. code-block:: shell
+
+         cd /path/to/Python-OC-Lettings-FR
+         source venv/bin/activate
+         pytest
+
+   - Linting du code :
+     .. code-block:: shell
+
+         cd /path/to/Python-OC-Lettings-FR
+         source venv/bin/activate
+         flake8
+         
+3. **Base de données** :
+   - Ouvrir une session shell sqlite3 :
+     .. code-block:: shell
+
+         cd /path/to/Python-OC-Lettings-FR
+         sqlite3
+
+   - Se connecter à la base de données :
+     .. code-block:: shell
+
+         .open oc-lettings-site.sqlite3
+
+   - Afficher les tables dans la base de données :
+     .. code-block:: shell
+
+         .tables
+
+   - Quitter la session :
+     .. code-block:: shell
+
+         .quit
+
+
+4. **Mise à jour de l'application** :
+   - Pour mettre à jour les dépendances :
+     .. code-block:: shell
+
+         pip install --upgrade -r requirements.txt
+
 CI/CD
 =====
 
